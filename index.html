@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thoughts — Your thoughts, sorted.</title>
+  <meta name="description" content="Thoughts is smart voice notes: say it the way you'd tell a friend, ask for it later the same way. It only answers from what you said.">
+  <meta property="og:title" content="Thoughts — Your thoughts, sorted.">
+  <meta property="og:description" content="Smart voice notes for iPhone, Apple Watch and Mac. I'll remember for you.">
+  <meta property="og:url" content="https://thoughts.help">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></symbol>
+  <symbol id="i-apple" viewBox="0 0 17 20"><path d="M13.9 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.4 4.8 1.8 5.8.9 7.4c-1.9 3.2-.5 8 1.3 10.6.9 1.3 1.9 2.7 3.3 2.7 1.3-.1 1.8-.9 3.4-.9s2 .9 3.4.8c1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-2.9 1.4-3-.1 0-2.9-1.1-3-4.4ZM11.4 3c.7-.9 1.2-2.1 1.1-3.3-1 .1-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.2 1.1.1 2.3-.6 3-1.5Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-kbd" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="lockup" href="#top" aria-label="Thoughts home">
+      <svg><use href="#i-mic"/></svg>
+      <b>Thoughts</b>
+    </a>
+    <nav class="links">
+      <a href="#how">How it works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="privacy.html">Privacy</a>
+      <a class="pill" href="#appstore"><span>App Store</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kick reveal" style="--d:.05s">Smart voice notes</p>
+        <h1 class="reveal" style="--d:.2s">Your thoughts,<br><em>sorted.</em></h1>
+        <p class="lede reveal" style="--d:.4s">Record your thoughts like you&rsquo;d tell a friend.<br/>Ask about them later. Never organize.</p>
+        <div class="cta reveal" style="--d:.6s">
+          <a class="badge" id="appstore" href="#appstore"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" width="150" height="50"></a>
+          <span class="platforms">iPhone &middot; Apple Watch &middot; Mac</span>
+        </div>
+        <p class="tag reveal" style="--d:.8s">I&rsquo;ll remember for you.</p>
+      </div>
+
+      <div class="demo">
+        
+          <div class="phone" id="phone" data-step="0" data-phase="idle">
+            <div class="screen">
+              <div class="island"></div>
+              <div class="appname">Thoughts</div>
+
+              <div class="slot">
+                <!-- Interactive demo cards, disabled 2026-09-10 (feedback: keep this page static except the mic). May return in a new format.
+                <div class="card" data-show="typing">
+                  <div class="well"><span id="typed"></span><i class="caret"></i></div>
+                </div>
+                -->
+
+                <div class="card on" data-show="answer1">
+                  <div class="serif q">&ldquo;What did I like here?&rdquo;</div>
+                  <div class="serif ans">You liked the garlic shrimp and the ginger tea at Hawaiian Cafe. Skip the poke.</div>
+                  <div class="row"><span class="src">From 3 thoughts <svg><use href="#i-chev"/></svg></span><span class="share"><svg><use href="#i-share"/></svg></span></div>
+                </div>
+
+                <!--
+                <div class="card" data-show="saved">
+                  <div class="saved"><span class="tick"><svg><use href="#i-check"/></svg></span>Saved</div>
+                  <div class="serif ans">I parked on level 3, next to the blue pillar.</div>
+                  <div class="row"><span class="src">View thought <svg><use href="#i-chev"/></svg></span></div>
+                </div>
+
+                <div class="card" data-show="answer2">
+                  <div class="serif q">&ldquo;where did I park&rdquo;</div>
+                  <div class="serif ans">Level 3, next to the blue pillar. You told me a moment ago.</div>
+                  <div class="row"><span class="src">From 1 thought <svg><use href="#i-chev"/></svg></span><span class="share"><svg><use href="#i-share"/></svg></span></div>
+                </div>
+
+                <div class="card" data-show="list">
+                  <div class="serif q">&ldquo;Add curtain rods and a bath mat to the IKEA list.&rdquo;</div>
+                  <div class="serif ans" style="font-size: 22px">Added. IKEA &ndash; 4 items:</div>
+                  <div class="list">
+                    <div class="item">Curtain rods <b>new</b></div>
+                    <div class="item">Bath mat <b>new</b></div>
+                    <div class="item">Kallax shelf</div>
+                    <div class="item">Tea lights</div>
+                  </div>
+                  <div class="row"><span class="chip">Open list</span></div>
+                </div>
+                -->
+              </div>
+
+              <div class="serif tagline" data-show="home">I&rsquo;ll remember for you.</div>
+
+              <button class="mic" id="mic" aria-label="Microphone">
+                <span class="ring r3"></span><span class="ring r1"></span><span class="ring r2"></span>
+                <span class="core">
+                  <span class="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+                  <svg class="glyph"><use href="#i-mic"/></svg>
+                </span>
+              </button>
+              <div class="serif listening">Listening&hellip;</div>
+              <div class="rec-actions"><span class="x"><svg><use href="#i-x"/></svg></span><span class="ok"><svg><use href="#i-check"/></svg></span></div>
+
+              <button class="type" id="type"><svg><use href="#i-kbd"/></svg>Type instead</button>
+
+              <div class="bottom"><svg><use href="#i-up"/></svg><span>Thoughts &middot; Lists &middot; Reminders</span></div>
+
+              <!-- Interactive demo affordances, disabled 2026-09-10 (feedback: keep this page static except the mic). May return in a new format.
+              <div class="banner over-mic" id="banner-mic"><span>Try it now</span></div>
+              <div class="banner over-type" id="banner-type"><span>Try it now</span></div>
+              -->
+            </div>
+          </div>
+        <!-- <div class="dots" id="dots"><i></i><i></i><i></i><i></i></div> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kick">How it works</p>
+        <h2>Say it. Ask later.</h2>
+      </div>
+      <div class="three">
+        <div class="card">
+          <p class="kick">Say it</p>
+          <p class="serif said">&ldquo;Loved the orange wine Ana brought, called Meinklang.&rdquo;</p>
+          <p>One tap, a few words, done. No folders, no tags, no filing.</p>
+        </div>
+        <div class="card">
+          <p class="kick">Ask later</p>
+          <p class="serif said">&ldquo;What was that orange wine?&rdquo;</p>
+          <p>Ask in plain words, weeks later. It finds the thought by meaning and shows you where the answer came from.</p>
+        </div>
+        <div class="card">
+          <p class="kick">Lists &amp; reminders</p>
+          <p class="serif said">&ldquo;Add olive oil to the groceries, and remind me to call Ana at 5.&rdquo;</p>
+          <p>Lists and reminders are made and updated for you, from plain words. No commands to learn.</p>
+        </div>
+      </div>
+
+      <div class="devices">
+        <div class="dev">
+          <svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4"/></svg>
+          <div><b>iPhone</b><span>Opens straight to the mic.</span></div>
+        </div>
+        <div class="dev">
+          <svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="3"/><path d="M9 6V3h6v3M9 18v3h6v-3"/></svg>
+          <div><b>Apple Watch</b><span>Raise, speak, lower. Saved.</span></div>
+        </div>
+        <div class="dev">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M1 19h22"/></svg>
+          <div><b>Mac</b><span>&#8984; Space from any app.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kick">Questions</p>
+        <h2>Plain answers.</h2>
+      </div>
+      <div class="qa">
+        <details open><summary>Is it private?<svg><use href="#i-plus"/></svg></summary><p>Yes. Your thoughts are yours alone. They are never shared or sold. Export or delete everything whenever you like.</p></details>
+        <details><summary>Do I have to tag or organize anything?<svg><use href="#i-plus"/></svg></summary><p>No, just speak or type. Time and place are attached quietly. When you ask, it finds thoughts by meaning, not by exact words.</p></details>
+        <details><summary>What happens when I say &ldquo;forget&rdquo;?<svg><use href="#i-plus"/></svg></summary><p>They&rsquo;re forgotten for 30 days in case you change your mind, then are deleted for good.</p></details>
+        <details><summary>Is it always listening?<svg><use href="#i-plus"/></svg></summary><p>Never. It records only while you hold the mic. Not in the background, not in meetings.</p></details>
+        <details><summary>Are there limited AI credits?<svg><use href="#i-plus"/></svg></summary><p>No, one subscription covers unlimited usage on iPhone, Apple Watch and Mac. See <a href="pricing.html">Pricing</a> for the plans.</p></details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="lockup"><svg><use href="#i-mic"/></svg><b>Thoughts</b></div>
+    <div class="ftag">I&rsquo;ll remember for you.</div>
+    <div class="flinks">
+      <a href="terms.html">Terms</a>
+      <a href="contact.html">Contact</a>
+      <span>&copy; 2026 So Easy Limited</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Interactive phone-demo script, disabled 2026-09-10 (feedback: keep the hero page static except the mic). May return in a new format.
+<script src="site.js"></script>
+-->
+</body>
+</html>
