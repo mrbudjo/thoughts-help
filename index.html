@@ -28,6 +28,13 @@
   <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M4 13v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
   <symbol id="i-up" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></symbol>
+  <symbol id="i-mic-dark" viewBox="0 0 24 24"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><path d="M5 12h.01M12 12h.01M19 12h.01" stroke-width="3"/></symbol>
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
 </svg>
 
@@ -64,73 +71,130 @@
       <div class="demo">
         
           <div class="phone" id="phone" data-step="0" data-phase="idle">
-            <div class="screen">
-              <div class="island"></div>
+            <div class="island"></div>
+
+            <!-- 1: ask by place -->
+            <div class="screen on">
               <div class="appname">Thoughts</div>
-
               <div class="slot">
-                <!-- Interactive demo cards, disabled 2026-09-10 (feedback: keep this page static except the mic). May return in a new format.
-                <div class="card" data-show="typing">
-                  <div class="well"><span id="typed"></span><i class="caret"></i></div>
-                </div>
-                -->
-
-                <div class="card on" data-show="answer1">
+                <div class="card on">
                   <div class="serif q">&ldquo;What did I like here?&rdquo;</div>
-                  <div class="serif ans">You liked the garlic shrimp and ginger tea at Hawaiian Cafe.</div>
-                  <div class="row"><span class="src">From 3 thoughts <svg><use href="#i-chev"/></svg></span><span class="share"><svg><use href="#i-share"/></svg></span></div>
+                  <div class="serif ans">You liked the garlic shrimp and peppermint tea.</div>
+                  <div class="row"><span class="src">From 2 thoughts <svg><use href="#i-chev"/></svg></span><span class="share"><svg><use href="#i-share"/></svg></span></div>
                 </div>
+              </div>
+              <div class="mic" aria-hidden="true">
+                <span class="ring r1"></span><span class="ring r2"></span>
+                <span class="core"><svg class="glyph"><use href="#i-mic"/></svg></span>
+              </div>
+              <div class="type"><svg><use href="#i-kbd"/></svg>Type instead</div>
+              <div class="bottom"><svg><use href="#i-up"/></svg><span>Thoughts &middot; Lists &middot; Reminders</span></div>
+            </div>
 
-                <!--
-                <div class="card" data-show="saved">
+            <!-- 2: one sentence, three things done -->
+            <div class="screen multi">
+              <div class="appname">Thoughts</div>
+              <div class="slot">
+                <div class="card on">
+                  <div class="saved"><span class="tick"><svg><use href="#i-check"/></svg></span>Saved &middot; 3 things done</div>
+                  <div class="serif ans">It&rsquo;s Maya&rsquo;s birthday on Saturday. Remind me Thursday to get a gift. And I need ice cream from Costco.</div>
+                  <div class="did"><span class="ico"><svg><use href="#i-list"/></svg></span><div><small>Added to Tasks</small>get a gift for Maya&rsquo;s birthday</div></div>
+                  <div class="did"><span class="ico"><svg><use href="#i-list"/></svg></span><div><small>Added to Costco</small>ice cream</div></div>
+                  <div class="row"><span class="chip when"><svg><use href="#i-bell"/></svg>Thursday &bull; 10am</span><span class="change">Change time</span></div>
+                </div>
+              </div>
+              <div class="mic" aria-hidden="true">
+                <span class="ring r1"></span><span class="ring r2"></span>
+                <span class="core"><svg class="glyph"><use href="#i-mic"/></svg></span>
+              </div>
+              <div class="type"><svg><use href="#i-kbd"/></svg>Type instead</div>
+              <div class="bottom"><svg><use href="#i-up"/></svg><span>Thoughts &middot; Lists &middot; Reminders</span></div>
+            </div>
+
+            <!-- 3: dark mode -->
+            <div class="screen dark">
+              <div class="appname">Thoughts</div>
+              <div class="slot">
+                <div class="card on">
                   <div class="saved"><span class="tick"><svg><use href="#i-check"/></svg></span>Saved</div>
-                  <div class="serif ans">I parked on level 3, next to the blue pillar.</div>
+                  <div class="ans">Loved the orange wine Ana brought, called Meinklang.</div>
                   <div class="row"><span class="src">View thought <svg><use href="#i-chev"/></svg></span></div>
                 </div>
-
-                <div class="card" data-show="answer2">
-                  <div class="serif q">&ldquo;where did I park&rdquo;</div>
-                  <div class="serif ans">Level 3, next to the blue pillar. You told me a moment ago.</div>
-                  <div class="row"><span class="src">From 1 thought <svg><use href="#i-chev"/></svg></span><span class="share"><svg><use href="#i-share"/></svg></span></div>
-                </div>
-
-                <div class="card" data-show="list">
-                  <div class="serif q">&ldquo;Add curtain rods and a bath mat to the IKEA list.&rdquo;</div>
-                  <div class="serif ans" style="font-size: 22px">Added. IKEA &ndash; 4 items:</div>
-                  <div class="list">
-                    <div class="item">Curtain rods <b>new</b></div>
-                    <div class="item">Bath mat <b>new</b></div>
-                    <div class="item">Kallax shelf</div>
-                    <div class="item">Tea lights</div>
-                  </div>
-                  <div class="row"><span class="chip">Open list</span></div>
-                </div>
-                -->
               </div>
-
-              <div class="serif tagline" data-show="home">I&rsquo;ll remember for you.</div>
-
-              <button class="mic" id="mic" aria-label="Microphone">
-                <span class="ring r3"></span><span class="ring r1"></span><span class="ring r2"></span>
-                <span class="core">
-                  <span class="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-                  <svg class="glyph"><use href="#i-mic"/></svg>
-                </span>
-              </button>
-              <div class="serif listening">Listening&hellip;</div>
-              <div class="rec-actions"><span class="x"><svg><use href="#i-x"/></svg></span><span class="ok"><svg><use href="#i-check"/></svg></span></div>
-
-              <button class="type" id="type"><svg><use href="#i-kbd"/></svg>Type instead</button>
-
+              <div class="mic" aria-hidden="true">
+                <span class="halo"></span>
+                <span class="core"><svg class="glyph"><use href="#i-mic-dark"/></svg></span>
+              </div>
+              <div class="type"><svg><use href="#i-kbd"/></svg>Type instead</div>
               <div class="bottom"><svg><use href="#i-up"/></svg><span>Thoughts &middot; Lists &middot; Reminders</span></div>
-
-              <!-- Interactive demo affordances, disabled 2026-09-10 (feedback: keep this page static except the mic). May return in a new format.
-              <div class="banner over-mic" id="banner-mic"><span>Try it now</span></div>
-              <div class="banner over-type" id="banner-type"><span>Try it now</span></div>
-              -->
             </div>
+
+            <!-- 4: a list (contains the wine saved in slide 3) -->
+            <div class="screen listview">
+              <div class="lhead"><svg><use href="#i-back"/></svg><span class="serif">Wines to remember</span><svg><use href="#i-share"/></svg><svg><use href="#i-trash"/></svg></div>
+              <div class="checks">
+                <div><i></i>Villa Maria, Hawkes Bay</div>
+                <div><i></i>Oyster Bay Sauvignon Blanc</div>
+                <div><i></i>Gazela vinho verde</div>
+                <div><i></i>Koshu, Ch&acirc;teau Mercian</div>
+                <div><i></i>Meinklang - that orange one</div>
+                <div class="add"><i><svg><use href="#i-plus"/></svg></i>Add an item&hellip;</div>
+              </div>
+              <div class="tabs">
+                <span><svg><use href="#i-cloud"/></svg>Thoughts</span>
+                <span class="cur"><svg><use href="#i-list"/></svg>Lists</span>
+                <span class="tabmic"><svg><use href="#i-mic"/></svg></span>
+                <span><svg><use href="#i-bell"/></svg>Reminders</span>
+                <span><svg><use href="#i-more"/></svg>More</span>
+              </div>
+            </div>
+
+            <!-- Spare slides. To use one: move it out of this comment, anywhere among the slides above. Dots are made by the script. Nothing else to change.
+
+            [Home, light]
+            <div class="screen home">
+              <div class="appname">Thoughts</div>
+              <div class="serif tagline">I&rsquo;ll remember for you.</div>
+              <div class="mic" aria-hidden="true">
+                <span class="ring r1"></span><span class="ring r2"></span>
+                <span class="core"><svg class="glyph"><use href="#i-mic"/></svg></span>
+              </div>
+              <div class="type"><svg><use href="#i-kbd"/></svg>Type instead</div>
+              <div class="bottom"><svg><use href="#i-up"/></svg><span>Thoughts &middot; Lists &middot; Reminders</span></div>
+            </div>
+
+            [Home, dark]
+            <div class="screen home dark">
+              <div class="appname">Thoughts</div>
+              <div class="serif tagline">I&rsquo;ll remember for you.</div>
+              <div class="mic" aria-hidden="true">
+                <span class="halo"></span>
+                <span class="core"><svg class="glyph"><use href="#i-mic-dark"/></svg></span>
+              </div>
+              <div class="type"><svg><use href="#i-kbd"/></svg>Type instead</div>
+              <div class="bottom"><svg><use href="#i-up"/></svg><span>Thoughts &middot; Lists &middot; Reminders</span></div>
+            </div>
+
+            [Restaurants answer]
+            <div class="screen">
+              <div class="appname">Thoughts</div>
+              <div class="slot">
+                <div class="card on">
+                  <div class="serif q">&ldquo;What are the restaurants I wanted to try?&rdquo;</div>
+                  <div class="serif ans">You wanted to try Paris Butter, Ragtag in Westmere, and Bria in Grey Lynn.</div>
+                  <div class="row"><span class="src">From 3 thoughts <svg><use href="#i-chev"/></svg></span><span class="share"><svg><use href="#i-share"/></svg></span></div>
+                </div>
+              </div>
+              <div class="mic" aria-hidden="true">
+                <span class="ring r1"></span><span class="ring r2"></span>
+                <span class="core"><svg class="glyph"><use href="#i-mic"/></svg></span>
+              </div>
+              <div class="type"><svg><use href="#i-kbd"/></svg>Type instead</div>
+              <div class="bottom"><svg><use href="#i-up"/></svg><span>Thoughts &middot; Lists &middot; Reminders</span></div>
+            </div>
+            -->
           </div>
-        <!-- <div class="dots" id="dots"><i></i><i></i><i></i><i></i></div> -->
+        <div class="dots" id="dots"></div>
       </div>
     </div>
   </section>
@@ -205,6 +269,23 @@
     </div>
   </div>
 </footer>
+
+<script>
+(function () {
+  var SLIDE_MS = 6000; // time each slide shows. Fade time is the .screen transition in styles.css
+  var s = document.querySelectorAll('#phone .screen'), dots = document.getElementById('dots'), n = 0, t;
+  s.forEach(function (el, i) { el.classList.toggle('on', i === 0); dots.appendChild(document.createElement('i')); });
+  var d = dots.querySelectorAll('i');
+  d[0].classList.add('on');
+  function go(i) { s[n].classList.remove('on'); d[n].classList.remove('on'); n = i % s.length; s[n].classList.add('on'); d[n].classList.add('on'); }
+  function stop() { clearInterval(t); }
+  function start() { stop(); t = setInterval(function () { go(n + 1); }, SLIDE_MS); }
+  d.forEach(function (el, i) { el.addEventListener('click', function () { go(i); start(); }); });
+  var p = document.getElementById('phone');
+  p.addEventListener('mouseenter', stop); p.addEventListener('mouseleave', start);
+  start();
+})();
+</script>
 
 <!-- Interactive phone-demo script, disabled 2026-09-10 (feedback: keep the hero page static except the mic). May return in a new format.
 <script src="site.js"></script>
