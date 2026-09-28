@@ -40,7 +40,7 @@
 
 <header class="nav">
   <div class="wrap">
-    <a class="lockup" href="#top" aria-label="Thoughts home">
+    <a class="lockup" href="#top" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})" aria-label="Thoughts home">
       <svg><use href="#i-mic"/></svg>
       <b>Thoughts</b>
     </a>
@@ -48,7 +48,7 @@
       <a href="#how">How it works</a>
       <a href="pricing.html">Pricing</a>
       <a href="privacy.html">Privacy</a>
-      <a class="pill" href="#appstore"><span>App Store</span></a>
+      <a class="pill" href="https://apps.apple.com/us/app/thoughts-easy-voice-memory/id6809778958"><svg><use href="#i-apple"/></svg><span>App Store</span></a>
     </nav>
   </div>
 </header>
@@ -62,7 +62,7 @@
         <h1 class="reveal" style="--d:.2s">Your thoughts,<br><em>sorted.</em></h1>
         <p class="lede reveal" style="--d:.4s">Record your thoughts like you&rsquo;d tell a friend.<br/>Ask about them later. Never organize.</p>
         <div class="cta reveal" style="--d:.6s">
-          <a class="badge" id="appstore" href="#appstore"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" width="150" height="50"></a>
+          <a class="badge" id="appstore" href="https://apps.apple.com/us/app/thoughts-easy-voice-memory/id6809778958"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" width="150" height="50"></a>
           <span class="platforms">iPhone &middot; Apple Watch &middot; Mac</span>
         </div>
         <p class="tag reveal" style="--d:.8s">I&rsquo;ll remember for you.</p>
