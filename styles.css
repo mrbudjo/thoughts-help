@@ -249,9 +249,10 @@ h2 { font-size: clamp(30px, 3vw, 40px); line-height: 1.15; }
   .cta { justify-content: center; }
   .lede { max-width: 520px; }
   :root { --ps: 0.78; }
-  .links a:not(.pill) { display: none; }
+  .links { gap: 20px; }
   .three { grid-template-columns: 1fr; }
-  .footer .wrap { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .footer .wrap { gap: 12px 20px; }
+  .ftag { display: none; }
 }
 @media (max-width: 480px) {
   :root { --ps: 0.62; }
@@ -259,12 +260,17 @@ h2 { font-size: clamp(30px, 3vw, 40px); line-height: 1.15; }
   h1 { font-size: 42px; }
   .lede { font-size: 16.5px; }
   .three .card { padding: 22px; }
+  .links { gap: 16px; }
+  .links .pill { width: 34px; height: 34px; padding: 0; justify-content: center; }
+  .links .pill span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .devices { gap: 10px 24px; }
   .dev svg { width: 24px; height: 24px; }
   .dev b { font-size: 14.5px; }
   .film { border-radius: 12px; }
   .flinks { flex-wrap: wrap; gap: 14px; }
 }
+
+@media (max-width: 360px) { .links { gap: 12px; font-size: 13.5px; } }
 
 /* ---------- Sub-pages (pricing / privacy / terms) ---------- */
 .page { padding: 40px 0 80px; }
