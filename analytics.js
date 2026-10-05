@@ -35,6 +35,9 @@
     x: 'social', threads: 'social', linkedin: 'social'
   };
 
+  // Short utm_source values apps add themselves (Instagram shares as utm_source=ig) → canonical source.
+  var ALIASES = { ig: 'instagram', fb: 'facebook', yt: 'youtube' };
+
   function hostSource(host) {
     host = host.toLowerCase().replace(/^www\./, '');
     for (var i = 0; i < HOSTS.length; i++) {
@@ -49,10 +52,12 @@
     v = (v || '').trim().toLowerCase();
     if (v.indexOf('.') !== -1) v = hostSource(v) || v;
     v = v.replace(/[^a-z0-9-]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40);
-    return v || null;
+    return ALIASES[v] || v || null;
   }
 
-  // Source: the link's utm_source, else a known external referrer, else none (= website).
+  // Source: the link's utm_source, else a known external referrer, else a click ID the
+  // platform appended, else none (= website). Click IDs come after the referrer because
+  // gclid/wbraid/gbraid are Google Ads IDs: a google.com referrer should still read as search.
   var q = new URLSearchParams(location.search);
   var source = clean(q.get('utm_source'));
   if (!source && document.referrer) {
@@ -60,6 +65,10 @@
       var r = new URL(document.referrer);
       if (r.hostname !== location.hostname) source = hostSource(r.hostname);
     } catch (e) {}
+  }
+  if (!source) {
+    if (q.has('ttclid')) source = 'tiktok';
+    else if (q.has('gclid') || q.has('wbraid') || q.has('gbraid')) source = 'youtube';
   }
   var content = clean(q.get('v'));
   var isGo = /\/go(\.html)?$/.test(location.pathname);
