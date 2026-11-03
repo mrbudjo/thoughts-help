@@ -107,8 +107,8 @@
   }
 
   function start() {
-    ['weekly', 'annual', 'weeklyUnit', 'annualUnit', 'perWeek', 'save', 'country', 'change',
-     'select', 'current', 'plans', 'soon', 'soonCountry', 'exact', 'usdLine', 'localLine'].forEach(function (k) {
+    ['weekly', 'annual', 'weeklyUnit', 'annualUnit', 'perWeek', 'save', 'country',
+     'select', 'plans', 'soon', 'soonCountry', 'exact', 'usdLine', 'localLine'].forEach(function (k) {
       el[k] = document.getElementById('price-' + k.replace(/[A-Z]/g, function (m) { return '-' + m.toLowerCase(); }));
     });
     if (!el.weekly) return;
@@ -122,12 +122,6 @@
       el.usdLine.hidden = true;
       el.localLine.hidden = false;
 
-      el.change.addEventListener('click', function () {
-        el.current.hidden = true;
-        el.select.hidden = false;
-        el.change.setAttribute('aria-expanded', 'true');
-        el.select.focus();
-      });
       el.select.addEventListener('change', function () {
         g = { country: el.select.value, source: 'picked' };
         save(g.country);

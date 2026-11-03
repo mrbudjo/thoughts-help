@@ -303,7 +303,9 @@ h2 { font-size: clamp(30px, 3vw, 40px); line-height: 1.15; }
 .plan.soon .note a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .price-where { padding-top: 6px; padding-left: 5px; }
 .linkish { font: inherit; font-weight: 500; color: var(--ink-65); background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
-.price-where select { font: inherit; margin-left: 8px; max-width: 100%; padding: 4px 6px; border-radius: 8px; border: 1px solid var(--ink-42); background: transparent; font-weight: 500; color: var(--ink-65); }
+/* The country looks like a link; the real <select> sits over it, invisible, so one click opens the picker. */
+.country-pick { position: relative; display: inline-block; border-radius: 4px; }
+.country-pick select { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; font-size: 16px; /* 16px stops iOS zooming on focus */ margin: 0; padding: 0; border: 0; -webkit-appearance: none; appearance: none; }
 .latte { font-family: var(--serif); font-style: italic; font-size: clamp(22px, 2.6vw, 30px); color: var(--ink-65); margin: 40px 0 8px; max-width: 640px; line-height: 1.3; }
 .includes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin: 36px 0 0; max-width: 960px; }
 .inc { display: flex; gap: 12px; align-items: flex-start; }
