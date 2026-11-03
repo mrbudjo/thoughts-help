@@ -1,6 +1,7 @@
 // PostHog for thoughts.help, plus "where did this visitor come from".
 // Event names and the source/ct scheme live in thoughts2/ANALYTICS.md.
-// Cookieless: nothing is stored in the browser, so no consent banner. The
+// Cookieless: PostHog stores nothing in the browser, so no consent banner (the
+// pricing page's picked country is a preference in localStorage, not analytics). The
 // source travels in the URL instead (utm_source on internal links, ct on the
 // App Store link).
 (function () {
@@ -125,6 +126,8 @@
     // On every event from this page load; re-derived from the URL on each page.
     posthog.register({ platform: 'web', source: source || 'website', ct: ct });
     if (content) posthog.register({ content: content });
+    // A page's own properties (pricing.js: price_country, price_country_source).
+    if (window.thoughtsPageProps) posthog.register(window.thoughtsPageProps);
     if (isGo) track('link_opened', {}, true);
     else posthog.capture('$pageview', {}, { send_instantly: true }); // not batched: a quick click-through would drop it
   }

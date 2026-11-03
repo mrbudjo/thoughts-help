@@ -14,6 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap">
   <link rel="stylesheet" href="styles.css">
+  <script src="zones.js" defer></script>
+  <script src="pricing.js" defer></script>
   <script src="analytics.js" defer></script>
 </head>
 <body>
@@ -50,18 +52,24 @@
     <div class="plans">
       <div class="plan best">
         <p class="kick">Weekly</p>
-        <div class="price">$1.99<small>USD / week</small></div>
+        <div class="price"><span id="price-weekly">$1.99</span><small id="price-weekly-unit">USD / week</small></div>
         <p class="note">&ldquo;Weeks of memories for less than a latte.&rdquo; Cancel any time from your Apple ID settings.</p>
       </div>
       <div class="plan">
-        <span class="save">Save 23%</span>
+        <span class="save" id="price-save">Save 23%</span>
         <p class="kick">Yearly</p>
-        <div class="price">$79.99<small>USD / year</small></div>
-        <p class="note">About $1.54 a week. The same unlimited plan, billed once a year.</p>
+        <div class="price"><span id="price-annual">$79.99</span><small id="price-annual-unit">USD / year</small></div>
+        <p class="note">About <span id="price-per-week">$1.54</span> a week. The same unlimited plan, billed once a year.</p>
       </div>
     </div>
 
-    <p class="meta" style="padding-top:6px;padding-left:5px">Prices in US dollars. The App Store shows the price in your local currency before you subscribe.</p>
+    <p class="meta price-where" id="price-usd-line">Prices in US dollars. The App Store shows the price in your local currency before you subscribe.</p>
+    <div class="meta price-where" id="price-local-line" hidden>
+      <p>Prices for <b id="price-country">United States</b> &middot; <button type="button" class="linkish" id="price-change" aria-expanded="false" aria-controls="price-select">change</button>
+        <select id="price-select" aria-label="Country or region" hidden></select></p>
+      <p id="price-not-sold" hidden>Thoughts isn&rsquo;t in the App Store in <span id="price-not-sold-country"></span> yet, so these are the US prices.</p>
+      <p>The App Store shows the exact price in your currency before you subscribe.</p>
+    </div>
 
     <div class="includes">
       <div class="inc"><svg><use href="#i-check"/></svg><div><b>Unlimited thoughts</b><span>Voice or text, as many as you like, as long as you like.</span></div></div>
