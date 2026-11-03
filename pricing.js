@@ -76,8 +76,14 @@
     el.save.textContent = 'Save ' + save + '%';
 
     el.country.textContent = name(g.country);
-    el.notSold.hidden = sold;
-    el.notSoldCountry.textContent = name(g.country);
+    // Not sold here (Europe today): one "Coming soon" card instead of prices.
+    el.plans.classList.toggle('not-sold', !sold);
+    for (var i = 0; i < el.plans.children.length; i++) {
+      var card = el.plans.children[i];
+      card.hidden = card === el.soon ? sold : !sold;
+    }
+    el.soonCountry.textContent = name(g.country);
+    el.exact.hidden = !sold;
   }
 
   function picker() {
@@ -102,7 +108,7 @@
 
   function start() {
     ['weekly', 'annual', 'weeklyUnit', 'annualUnit', 'perWeek', 'save', 'country', 'change',
-     'select', 'notSold', 'notSoldCountry', 'usdLine', 'localLine'].forEach(function (k) {
+     'select', 'current', 'plans', 'soon', 'soonCountry', 'exact', 'usdLine', 'localLine'].forEach(function (k) {
       el[k] = document.getElementById('price-' + k.replace(/[A-Z]/g, function (m) { return '-' + m.toLowerCase(); }));
     });
     if (!el.weekly) return;
@@ -112,10 +118,12 @@
       table = t;
       picker();
       render();
+      el.plans.classList.add('local');
       el.usdLine.hidden = true;
       el.localLine.hidden = false;
 
       el.change.addEventListener('click', function () {
+        el.current.hidden = true;
         el.select.hidden = false;
         el.change.setAttribute('aria-expanded', 'true');
         el.select.focus();

@@ -49,7 +49,7 @@
       <p class="lede">One subscription covers iPhone, Apple Watch and Mac. Unlimited thoughts, unlimited questions, no AI credit limits.</p>
     </div>
 
-    <div class="plans">
+    <div class="plans" id="price-plans">
       <div class="plan best">
         <p class="kick">Weekly</p>
         <div class="price"><span id="price-weekly">$1.99</span><small id="price-weekly-unit">USD / week</small></div>
@@ -61,14 +61,16 @@
         <div class="price"><span id="price-annual">$79.99</span><small id="price-annual-unit">USD / year</small></div>
         <p class="note">About <span id="price-per-week">$1.54</span> a week. The same unlimited plan, billed once a year.</p>
       </div>
+      <div class="plan best soon" id="price-soon" hidden>
+        <div class="price">Coming soon</div>
+        <p class="note">Thoughts isn&rsquo;t available in <span id="price-soon-country">your country</span> yet.<br><a href="contact.html">Contact us</a> if you&rsquo;d like to see it in your country.</p>
+      </div>
     </div>
 
     <p class="meta price-where" id="price-usd-line">Prices in US dollars. The App Store shows the price in your local currency before you subscribe.</p>
     <div class="meta price-where" id="price-local-line" hidden>
-      <p>Prices for <b id="price-country">United States</b> &middot; <button type="button" class="linkish" id="price-change" aria-expanded="false" aria-controls="price-select">change</button>
-        <select id="price-select" aria-label="Country or region" hidden></select></p>
-      <p id="price-not-sold" hidden>Thoughts isn&rsquo;t in the App Store in <span id="price-not-sold-country"></span> yet, so these are the US prices.</p>
-      <p>The App Store shows the exact price in your currency before you subscribe.</p>
+      <p>Prices for<span id="price-current"> <b id="price-country">United States</b> &middot; <button type="button" class="linkish" id="price-change" aria-expanded="false" aria-controls="price-select">change</button></span><select id="price-select" aria-label="Country or region" hidden></select></p>
+      <p id="price-exact">The App Store shows the exact price in your currency before you subscribe.</p>
     </div>
 
     <div class="includes">
